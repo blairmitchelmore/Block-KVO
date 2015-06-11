@@ -193,7 +193,7 @@
 				
             default:// +3
                 // -someObject:didChangeSomethingFrom:to:
-                objc_msgSend(weakSelf, observationSelector, weakObject, old, new); // Fuck off NSInvocation!
+                ((id (*)(id, SEL, id, id, id)) objc_msgSend)(weakSelf, observationSelector, weakObject, old, new); // Fuck off NSInvocation!
                 break;
         }
 	}];
